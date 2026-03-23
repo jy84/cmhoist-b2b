@@ -30,11 +30,19 @@ export default function AboutPage() {
         <h2>오시는 길</h2>
         <div className={styles.mapInfo}>
           <p><strong>주소:</strong> 경기 성남시 분당구 방아로 68 (13569)</p>
-          <p><strong>연락처:</strong> 010-3664-0847</p>
+          <p><strong>연락처:</strong> 010-3664-0847 / 031-706-0847</p>
           <p><strong>이메일:</strong> ybkssm@gmail.com</p>
         </div>
-        <div className={styles.mapPlaceholder}>
-          <span>지도 표시 영역 (Google Maps / Kakao Map)</span>
+        <div className={styles.mapContainer}>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3167.9272445163!2d127.124584!3d37.408103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca80036122d9b%3A0xc33e54b68e91629d!2z6rK96riw64-EIOyEseuCqOyLnCDtoTr7pneqReference66as66GvIDY4!5e0!3m2!1sko!2skr!4v1711200000000!5m2!1sko!2skr" 
+            width="100%" 
+            height="450" 
+            style={{ border: 0, borderRadius: '12px' }} 
+            allowFullScreen={true} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </section>
     </div>

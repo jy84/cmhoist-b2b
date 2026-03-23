@@ -20,53 +20,88 @@
 }
 
 .logoGrid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .logoItem {
-  background-color: white;
-  padding: 2.5rem 3rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: relative;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  transition: background 0.3s ease;
+  z-index: 1;
 }
 
 .logoItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.logoItem:hover .overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85));
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
 }
 
 .logoItem h3 {
-  font-size: 1.8rem;
-  color: var(--foreground);
+  font-size: 2.8rem;
+  color: white;
   margin-bottom: 0.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .logoItem span {
-  font-size: 0.85rem;
-  color: var(--metallic-gray);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .logoItem {
+    height: 280px;
+  }
 }
 
 @media (max-width: 768px) {
   .logoGrid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .logoItem {
-    min-width: calc(50% - 1.5rem);
-    padding: 1.5rem;
+    height: 240px;
+  }
+  .logoItem h3 {
+    font-size: 2.2rem;
   }
 }

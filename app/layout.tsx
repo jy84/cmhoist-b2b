@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import AIChat from './components/AIChat';
 
 export const metadata: Metadata = {
   title: 'CM한국지점 | 프리미엄 호이스트 B2B',
@@ -22,7 +21,6 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
-        <AIChat />
         <Footer />
       </body>
     </html>

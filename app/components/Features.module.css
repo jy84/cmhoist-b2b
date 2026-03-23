@@ -1,0 +1,53 @@
+.featuresSection {
+  padding: 6rem 2rem;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.card {
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px solid var(--light-gray);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 40px rgba(11, 37, 69, 0.08);
+}
+
+.iconWrapper {
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  background-color: var(--light-gray);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cardDesc {
+  font-size: 1.05rem;
+  color: var(--metallic-gray);
+  line-height: 1.6;
+}

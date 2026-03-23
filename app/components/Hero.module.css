@@ -1,0 +1,164 @@
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-blue);
+  background: linear-gradient(135deg, #0b2545 0%, #133c55 100%);
+  color: white;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin: 0 auto;
+}
+
+.imageColumn {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  animation: fadeInLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+.heroImage {
+  max-width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+  border-radius: 12px;
+}
+
+.contentColumn {
+  flex: 1.2;
+  text-align: left;
+  animation: fadeInRight 1s ease-out forwards;
+  opacity: 0;
+}
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.title strong {
+  font-weight: 700;
+  display: block;
+  margin-top: 0.5rem;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  color: var(--light-gray);
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.primaryBtn, .secondaryBtn {
+  padding: 0.8rem 2.5rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.primaryBtn {
+  background-color: var(--accent-blue);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.2);
+}
+
+.primaryBtn:hover {
+  background-color: #4a8dc7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.mobileBreak {
+  display: none;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 960px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .imageColumn {
+    justify-content: center;
+    order: 2; /* 모바일에서는 텍스트가 먼저 오도록 할 수 있으나 좌측 상단을 원했으므로 1 유지 원하면 제거. 시각적으로 모바일은 위아래 배치 */
+    order: -1; /* 이미지가 위로 오게 (상단) */
+  }
+  .contentColumn {
+    text-align: center;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .mobileBreak {
+    display: block;
+  }
+}

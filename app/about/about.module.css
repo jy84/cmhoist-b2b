@@ -1,0 +1,90 @@
+.aboutPage {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.header {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: var(--light-gray);
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.contentSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.textContent h2 {
+  font-size: 2.2rem;
+  color: var(--primary-blue);
+  margin-bottom: 2rem;
+}
+
+.textContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+  word-break: keep-all;
+}
+
+.ceo {
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  text-align: right;
+  border-top: 2px solid var(--light-gray);
+  padding-top: 1.5rem;
+}
+
+.mapSection {
+  max-width: 1000px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.mapSection h2 {
+  font-size: 2.2rem;
+  color: var(--primary-blue);
+  margin-bottom: 2rem;
+}
+
+.mapInfo {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.mapInfo p {
+  font-size: 1.1rem;
+  color: var(--foreground);
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 400px;
+  background-color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--metallic-gray);
+  font-size: 1.2rem;
+  font-weight: 500;
+}

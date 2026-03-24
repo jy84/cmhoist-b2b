@@ -105,3 +105,113 @@
     font-size: 2.2rem;
   }
 }
+
+/* New Expandable Brand Grid Styles */
+
+.showMoreContainer {
+  margin-top: 4rem;
+}
+
+.showMoreBtn {
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.showMoreBtn:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.otherBrandsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.minilogoItem {
+  position: relative;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.minilogoItem:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.miniOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  transition: background 0.3s ease;
+}
+
+.minilogoItem:hover .miniOverlay {
+  background: rgba(0,0,0,0.6);
+}
+
+.miniContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.miniContent h4 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+  .otherBrandsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .otherBrandsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .minilogoItem {
+    height: 140px;
+  }
+  .miniContent h4 {
+    font-size: 1rem;
+  }
+}
